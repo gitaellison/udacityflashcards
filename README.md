@@ -4,6 +4,8 @@ This repo is a code-along with the first project in the [React Nanodegree progra
 
 Most of the commits in this repository correspond to videos in the program.
 
+Tested Platform: Android
+
 ## Project Setup
 * install the dependencies - `npm install`
 * start the Project - `npm start`
