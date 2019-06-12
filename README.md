@@ -7,6 +7,7 @@ Most of the commits in this repository correspond to videos in the program.
 ## Project Setup
 * install the dependencies - `npm install`
 * start the Project - `npm start`
+* install Expo app on either android or IOS and scan qr tunnel code produced after npm start
 
 ## Description
 
