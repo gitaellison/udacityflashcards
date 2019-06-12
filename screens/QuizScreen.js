@@ -53,15 +53,15 @@ class QuizScreen extends React.Component {
   backToDeck(deck){
       return (<TouchableOpacity
             style={Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.AndroidSubmitBtn}
-            onPress={() => this.props.navigation.navigate(
+            onPress={() => {this.setState(() => ({questionNumber:0, correctAnswer:0})), 
+            this.props.navigation.navigate(
               "Deck",
               { title: deck.title }
-             )}>
+             )}}>
               <Text style={styles.submitBtnText}>Back to Deck</Text>
           </TouchableOpacity>)
   }
   render(){
-    debugger;
     const deck = this.props.data[this.props.navigation.state.params.title.title]
     const questions = deck.questions;
     if(questions.length == 0){

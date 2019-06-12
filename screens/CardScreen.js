@@ -5,6 +5,7 @@ import { withNavigation } from 'react-navigation';
 import { purple, white } from '../utils/colors'
 import {addCard} from "../actions"
 import {connect} from "react-redux"
+import {validateInput} from "../utils/helpers"
 class CardScreen extends React.Component {
     state = {
       question: "",
@@ -15,6 +16,9 @@ class CardScreen extends React.Component {
       const card = {
           question: this.state.question,
           answer: this.state.answer
+      }
+      if(!validateInput(card.question) || !validateInput(card.answer)){
+        return
       }
 
       this.props.dispatch(addCard(this.props.navigation.state.params.title, card))

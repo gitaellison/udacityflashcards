@@ -5,6 +5,8 @@ import { withNavigation } from 'react-navigation';
 import {red, purple, white} from '../utils/colors'
 import {connect} from "react-redux"
 import {addDeck} from "../actions"
+import {validateInput} from "../utils/helpers"
+
 class AddDeckScreen extends React.Component {
       state = {
         title: ""
@@ -12,6 +14,11 @@ class AddDeckScreen extends React.Component {
 
   submit(){
     const deckTitle = this.state.title
+
+    if(!validateInput(deckTitle)){
+      return;
+    }
+
         this.props.dispatch(addDeck(this.state.title))
         this.setState(() =>({
             title: ""
